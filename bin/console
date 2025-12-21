@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+// Define ROOT_PATH for use in the CLI and other parts of the application
+use Strux\Component\Console\CLI;
+
+define('ROOT_PATH', dirname(__DIR__));
+
+/**
+ * -------------------------------------------------------------------------
+ * Register The Autoloader
+ * -------------------------------------------------------------------------
+ */
+require_once ROOT_PATH . '/./vendor/autoload.php';
+
+
+/**
+ * -------------------------------------------------------------------------
+ * Bootstrap The Application
+ * -------------------------------------------------------------------------
+ */
+$app = require_once ROOT_PATH . '/./bootstrap/app.php';
+
+
+/**
+ * -------------------------------------------------------------------------
+ * Run The CLI Command
+ * -------------------------------------------------------------------------
+ */
+$container = $app->getContainer();
+$logger = $app->getLogger();
+$cli = new CLI($container, $logger);
+$cli->run($argv);
