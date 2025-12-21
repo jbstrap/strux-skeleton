@@ -1,5 +1,8 @@
 <?php
 
+use App\Domain\Identity\Event\UserRegistered;
+use App\Domain\Identity\Listener\SendWelcomeEmail;
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -13,16 +16,16 @@ return [
     */
     'events' => [
         'listeners' => [
-            //UserRegistered::class => [
+            // UserRegistered::class => [
             //    SendWelcomeEmail::class,
                 // You can add more listeners for the same event here
                 // \App\Listener\AwardWelcomeBonus::class,
-            //],
+            // ],
 
             // \App\Event\OrderPlaced::class => [
             //     \App\Listener\SendOrderConfirmation::class,
             //     \App\Listener\UpdateInventory::class,
-            // ],
+            // ]
         ]
     ]
 ];

@@ -5,11 +5,8 @@ return [
         /**
          * Activate maintenance mode.
          * Can be overridden by an environment variable, e.g., MAINTENANCE_MODE=true
-         * Or by the presence of a "down" file, e.g., var/framework/down
          */
         'active' => filter_var(env('MAINTENANCE_MODE'), FILTER_VALIDATE_BOOLEAN) ?? false,
-        // Example: Check for a "down" file (like Laravel approach)
-        // 'active' => file_exists(ROOT_PATH . '/var/framework/down'),
 
         /**
          * IP addresses allowed accessing the application during maintenance mode.
@@ -24,8 +21,8 @@ return [
          * Example: '/admin/.*', '/api/v1/status'
          */
         'allowed_routes' => [
-            // '/admin/login', // Example: Allow access to admin login
-            // '/api/status', // Example: Allow access to an API status endpoint
+            // '/admin/login',
+            // '/api/status'
         ],
 
         /**
@@ -34,7 +31,7 @@ return [
          * Example for Twig: 'system/maintenance.html.twig'
          * Example for Plates: 'system::maintenance'
          */
-        'view_template' => 'system/maintenance', // Assumes 'system/maintenance.php' or '.twig' in your default view path
+        'view_template' => 'system/maintenance',
 
         /**
          * The HTTP status code to return.

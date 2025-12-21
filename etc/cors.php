@@ -30,6 +30,6 @@ return [
         ],
         "headers.expose" => [],
         "credentials" => true,
-        "cache" => 3600, // Preflight cache duration in seconds
+        "cache" => 3600
     ]
 ];

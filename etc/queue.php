@@ -26,12 +26,12 @@ return [
 
             'database' => [
                 'driver' => 'database',
-                'table' => 'jobs', // The database table to use
-                'queue' => 'default', // The default queue "channel"
-                'retry_after' => 90, // Seconds to wait before retrying a job
+                'table' => 'jobs',
+                'queue' => 'default',
+                'retry_after' => 90
             ],
 
-            // 'redis' => [ ... ],
+            // 'redis' => [ ... ], // Coming soon
         ],
 
         /*

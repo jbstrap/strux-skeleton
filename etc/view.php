@@ -59,7 +59,7 @@ return [
              * Recommended for development, can be disabled in production for a slight performance gain.
              * Automatically enabled if APP_ENV environment variable is 'development'.
              */
-            'auto_reload' => env('APP_ENV') === 'development' || env('APP_ENV') === null, // Default to true if APP_ENV not set
+            'auto_reload' => env('APP_ENV') === 'development' || env('APP_ENV') === null,
         ],
 
         /**

@@ -16,7 +16,7 @@ $queue = require __DIR__ . '/queue.php';
 $session = require __DIR__ . '/session.php';
 $view = require __DIR__ . '/view.php';
 
-// merge into one big array
+// Merge all configuration arrays into a single configuration array
 return array_merge_recursive(
     $app,
     ['auth' => $auth],

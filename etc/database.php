@@ -12,7 +12,7 @@ return [
         | you may use many connections at once using the Database library.
         |
         */
-        'default' => env('DB_CONNECTION', 'sqlite'), // Use environment variable or default to sqlite
+        'default' => env('DB_CONNECTION', 'sqlite'),
 
         /*
         |--------------------------------------------------------------------------
@@ -27,13 +27,11 @@ return [
         'connections' => [
             'sqlite' => [
                 'driver' => 'sqlite',
-                // Use an absolute path or a path relative to ROOT_PATH
-                // DB_PATH from .env will override this path
                 'path' => env('DB_PATH', ROOT_PATH . '/var/database/app.db'),
                 'prefix' => '',
-                'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true), // SQLite specific
-                'options' => [ // SQLite specific options if needed, merged with global
-                    // PDO::ATTR_TIMEOUT => 5, // Example
+                'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+                'options' => [
+                    // PDO::ATTR_TIMEOUT => 5
                 ],
             ],
 
@@ -50,9 +48,9 @@ return [
                 'prefix' => '',
                 'strict' => true,
                 'engine' => null,
-                'options' => [ // MySQL specific options if needed, merged with global
-                    // PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-                ],
+                'options' => [
+                    // PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA')
+                ]
             ],
         ],
 
@@ -64,8 +62,8 @@ return [
         'fetch' => PDO::FETCH_ASSOC, // Changed from FETCH_OBJ to match your DI setup
         'global_options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_EMULATE_PREPARES => false, // Use real prepared statements
-            // PDO::ATTR_PERSISTENT => false, // Persistent connections can have caveats
+            PDO::ATTR_EMULATE_PREPARES => false,
+            // PDO::ATTR_PERSISTENT => false
         ]
     ]
 ];

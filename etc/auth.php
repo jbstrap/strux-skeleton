@@ -31,7 +31,7 @@ return [
     'sentinels' => [
         'web' => [
             'driver' => 'session',
-            'model' => \App\Domain\Identity\Entity\User::class, // The user model for this sentinel
+            //'model' => \App\Domain\Identity\Entity\User::class, // The user model for this sentinel
         ],
 
         'api' => [
