@@ -6,13 +6,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "strux/strux-framework": "^1.0"
+        "strux/strux-framework": "^1.0",
+        "ext-pdo": "*"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "App\\": "src/"
         }
     },
     "config": {

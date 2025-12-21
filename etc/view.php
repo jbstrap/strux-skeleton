@@ -28,9 +28,9 @@ return [
             'partials' => defined('ROOT_PATH') ? ROOT_PATH . '/templates/partials' : dirname(__DIR__) . '/templates/partials',
         ],
         'context_providers' => [
-            \App\View\Context\AppContext::class,
-            \App\View\Context\AuthContext::class,
-            \App\View\Context\FlashContext::class,
+            // \App\View\Context\AppContext::class,
+            // \App\View\Context\AuthContext::class,
+            // \App\View\Context\FlashContext::class,
         ],
 
         /**

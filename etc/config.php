@@ -1,6 +1,5 @@
 <?php
 
-// load each etc. file’s array
 $app = require __DIR__ . '/app.php';
 $auth = require __DIR__ . '/auth.php';
 $cache = require __DIR__ . '/cache.php';

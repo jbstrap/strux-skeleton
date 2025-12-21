@@ -50,7 +50,7 @@ return [
         | Use etc/services.php for that.
         */
         'registries' => [
-            \App\Registry\MyCustomRegistry::class,
+            // \App\Registry\MyCustomRegistry::class,
         ]
     ]
 ];

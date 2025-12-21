@@ -52,7 +52,7 @@ return [
     |
     */
     'authorities' => [
-        \App\Domain\Ticketing\Entity\Ticket::class => \App\Domain\Ticketing\Security\TicketAuthority::class,
+        // \App\Domain\Ticketing\Entity\Ticket::class => \App\Domain\Ticketing\Security\TicketAuthority::class,
         // \App\Models\Post::class => \App\Security\PostAuthority::class,
     ]
 ];
