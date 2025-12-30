@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * My Custom PHP Framework
+ * Strux PHP Framework
  *
  * This file is the single point of entry for all HTTP requests.
  */
