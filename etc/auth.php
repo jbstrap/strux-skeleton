@@ -12,8 +12,9 @@ return [
     |
     */
     'defaults' => [
-        'sentinel' => 'web',
-        'redirect_to' => '/', // Default route name or path after login
+        'sentinel' => 'web', // Default sentinel name
+        'redirect_to' => 'login', // Default route name or path after login
+        'next_parameter' => 'next', // The query parameter for intended URL
     ],
 
     /*
@@ -31,7 +32,7 @@ return [
     'sentinels' => [
         'web' => [
             'driver' => 'session',
-            //'model' => \App\Domain\Identity\Entity\User::class, // The user model for this sentinel
+            // 'model' => User::class, // The user model for this sentinel
         ],
 
         'api' => [

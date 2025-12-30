@@ -3,9 +3,16 @@
 
 declare(strict_types=1);
 
-// Define ROOT_PATH for use in the CLI and other parts of the application
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use Strux\Component\Console\CLI;
+use Strux\Foundation\Bootstrap;
 
+/**
+ * -------------------------------------------------------------------------
+ * Define The Application Root Path
+ * -------------------------------------------------------------------------
+ */
 define('ROOT_PATH', dirname(__DIR__));
 
 /**
@@ -13,16 +20,19 @@ define('ROOT_PATH', dirname(__DIR__));
  * Register The Autoloader
  * -------------------------------------------------------------------------
  */
-require_once ROOT_PATH . '/./vendor/autoload.php';
-
+require_once ROOT_PATH . '/vendor/autoload.php';
 
 /**
  * -------------------------------------------------------------------------
  * Bootstrap The Application
  * -------------------------------------------------------------------------
  */
-$app = require_once ROOT_PATH . '/./bootstrap/app.php';
-
+try {
+    $app = Bootstrap::create(ROOT_PATH);
+} catch (NotFoundExceptionInterface|ContainerExceptionInterface $e) {
+    echo 'Application bootstrap failed: ' . $e->getMessage() . PHP_EOL;
+    exit(1);
+}
 
 /**
  * -------------------------------------------------------------------------
@@ -30,6 +40,6 @@ $app = require_once ROOT_PATH . '/./bootstrap/app.php';
  * -------------------------------------------------------------------------
  */
 $container = $app->getContainer();
-$logger = $app->getLogger();
-$cli = new CLI($container, $logger);
+
+$cli = new CLI($container);
 $cli->run($argv);

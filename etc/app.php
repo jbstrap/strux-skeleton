@@ -7,7 +7,7 @@ return [
 
         // 'domain' = DDD structure (src/Domain/Identity/Entity)
         // 'standard' = Flat structure (src/Entity, src/Controller)
-        'mode' => env('APP_MODE', 'domain'),
+        'mode' => env('APP_MODE', 'standard'),
 
         'meta' => [
             'title' => env('META_TITLE', 'Ticketing System - A Simple PHP Framework'),

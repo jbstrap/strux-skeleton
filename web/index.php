@@ -8,19 +8,15 @@ declare(strict_types=1);
  * This file is the single point of entry for all HTTP requests.
  */
 
-use Strux\Foundation\App;
+use Strux\Foundation\Bootstrap;
 
 define('ROOT_PATH', dirname(__DIR__));
 require_once ROOT_PATH . '/vendor/autoload.php';
 
-/** @var App $app */
-$app = require_once ROOT_PATH . '/bootstrap/app.php';
-
-// Run the application
 try {
+    $app = Bootstrap::create(ROOT_PATH);
     $app->run();
-} catch (Throwable $e) {
-    // Handle any uncaught exceptions
+} catch (\Throwable $e) {
     http_response_code(500);
     error_log("FATAL: Uncaught Exception: " . $e->getMessage() . "\n" . $e->getTraceAsString());
     echo "An error occurred: " . htmlspecialchars($e->getMessage());
