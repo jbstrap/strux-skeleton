@@ -19,8 +19,9 @@ return new class implements ConfigInterface {
                 'description' => env('META_DESCRIPTION', 'A lightweight PHP framework for building web applications.'),
             ],
             'env' => env('APP_ENV', 'development'), // or production, testing
-            'debug' => (bool)env('APP_DEBUG', true),
+            'debug' => (bool) env('APP_DEBUG', true),
             'url' => env('APP_URL', 'http://127.0.0.1:8000'),
+            'version' => '1.0.13',
             'timezone' => 'UTC',
             'sessions' => [
                 'driver' => 'file',
