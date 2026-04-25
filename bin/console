@@ -1,0 +1,48 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use App\App;
+use Strux\Component\Console\CLI;
+
+/**
+ * -------------------------------------------------------------------------
+ * Define The Application Root Path
+ * -------------------------------------------------------------------------
+ */
+define('ROOT_PATH', dirname(__DIR__));
+
+/**
+ * -------------------------------------------------------------------------
+ * Register The Autoloader
+ * -------------------------------------------------------------------------
+ */
+require_once ROOT_PATH . '/vendor/autoload.php';
+
+/**
+ * -------------------------------------------------------------------------
+ * Create The Application
+ * -------------------------------------------------------------------------
+ */
+try {
+    $app = App::create(ROOT_PATH);
+} catch (Throwable $e) {
+    echo 'Application bootstrap failed: ' . $e->getMessage() . PHP_EOL;
+    exit(1);
+}
+
+/**
+ * -------------------------------------------------------------------------
+ * Run The CLI Command
+ * -------------------------------------------------------------------------
+ */
+$container = $app->getContainer();
+
+try {
+    $cli = new CLI($container, ROOT_PATH);
+    $cli->run($argv);
+} catch (Throwable $e) {
+    echo 'Failed to start CLI: ' . $e->getMessage() . PHP_EOL;
+    exit(1);
+}
