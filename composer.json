@@ -11,7 +11,7 @@
   "require": {
     "php": "^8.2",
     "ext-pdo": "*",
-    "strux/strux-framework": "^1.2.1",
+    "strux/strux-framework": "^1.2.2",
     "ext-apcu": "*"
   },
   "autoload": {
